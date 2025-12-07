@@ -35,12 +35,12 @@ if total_bobot != 1.0:
 
 # --- DATA AWAL (DEFAULT) ---
 data_awal = {
-    'Alternatif': ['Samsung Galaxy A54', 'Xiaomi 13T', 'Infinix GT 10 Pro', 'Realme 11 Pro'],
-    'Harga (Juta)': [5.5, 6.5, 3.5, 4.0],
-    'RAM (GB)': [8, 12, 8, 8],
-    'ROM (GB)': [256, 256, 256, 256],
-    'Baterai (mAh)': [5000, 5000, 5000, 5000],
-    'Kamera (MP)': [50, 50, 108, 100]
+    'Alternative': ['Samsung Galaxy A54', 'Xiaomi 13T', 'Infinix GT 10 Pro', 'Realme 11 Pro'],
+    'Price': [5.9, 6.5, 4.4, 5.5],        # Cost
+    'RAM': [8, 12, 8, 12],                # Benefit
+    'ROM': [256, 256, 256, 512],          # Benefit (Realme update ke 512)
+    'Battery': [5000, 5000, 5000, 5000],  # Benefit
+    'Camera': [50, 50, 108, 100]          # Benefit
 }
 
 # --- TAMPILAN TABEL EDITABLE ---
