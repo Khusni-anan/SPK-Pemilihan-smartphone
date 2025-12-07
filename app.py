@@ -54,8 +54,8 @@ df_edit = st.data_editor(df, num_rows="dynamic", key="data_editor")
 if st.button("🚀 Hitung Rekomendasi"):
     
     # Pisahkan nama alternatif agar tidak ikut dihitung
-    alternatives = df_edit['Alternatif'].values
-    matrix = df_edit.drop('Alternatif', axis=1)
+    alternatives = df_edit['Alternative'].values
+    matrix = df_edit.drop('Alternative', axis=1)
     cols = matrix.columns
     
     # Definisi Tipe Kriteria (Sesuai urutan kolom)
