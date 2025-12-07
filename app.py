@@ -13,20 +13,20 @@ st.set_page_config(
 st.title("📱 SPK Pemilihan Smartphone - Metode ARAS")
 st.markdown("""
 Aplikasi ini menggunakan metode **Additive Ratio Assessment (ARAS)** untuk merekomendasikan smartphone terbaik 
-berdasarkan kriteria: **Harga (Cost), RAM, ROM, Baterai, dan Kamera (Benefit)**.
+berdasarkan kriteria: **Price (Cost), RAM, ROM, Battery, dan Camera (Benefit)**.
 """)
 
 # --- SIDEBAR (INPUT BOBOT) ---
 st.sidebar.header("⚙️ Konfigurasi Bobot")
 st.sidebar.info("Pastikan total bobot proporsional (Default total: 100%)")
 
-w_harga = st.sidebar.slider("Bobot Harga (Cost)", 0.0, 0.5, 0.30, 0.05)
+w_Price = st.sidebar.slider("Bobot Price (Cost)", 0.0, 0.5, 0.30, 0.05)
 w_ram = st.sidebar.slider("Bobot RAM (Benefit)", 0.0, 0.5, 0.20, 0.05)
 w_rom = st.sidebar.slider("Bobot ROM (Benefit)", 0.0, 0.5, 0.20, 0.05)
-w_baterai = st.sidebar.slider("Bobot Baterai (Benefit)", 0.0, 0.5, 0.15, 0.05)
-w_kamera = st.sidebar.slider("Bobot Kamera (Benefit)", 0.0, 0.5, 0.15, 0.05)
+w_Battery = st.sidebar.slider("Bobot Battery (Benefit)", 0.0, 0.5, 0.15, 0.05)
+w_Camera = st.sidebar.slider("Bobot Camera (Benefit)", 0.0, 0.5, 0.15, 0.05)
 
-bobot = [w_harga, w_ram, w_rom, w_baterai, w_kamera]
+bobot = [w_Price, w_ram, w_rom, w_Battery, w_Camera]
 total_bobot = sum(bobot)
 st.sidebar.write(f"**Total Bobot:** {total_bobot:.2f}")
 
@@ -38,7 +38,7 @@ data_awal = {
     'Alternative': ['Samsung Galaxy A54', 'Xiaomi 13T', 'Infinix GT 10 Pro', 'Realme 11 Pro'],
     'Price': [5.9, 6.5, 4.4, 5.5],        # Cost
     'RAM': [8, 12, 8, 12],                # Benefit
-    'ROM': [256, 256, 256, 512],          # Benefit (Realme update ke 512)
+    'ROM': [256, 256, 256, 512],          # Benefit 
     'Battery': [5000, 5000, 5000, 5000],  # Benefit
     'Camera': [50, 50, 108, 100]          # Benefit
 }
@@ -59,7 +59,7 @@ if st.button("🚀 Hitung Rekomendasi"):
     cols = matrix.columns
     
     # Definisi Tipe Kriteria (Sesuai urutan kolom)
-    # Harga=Cost, Sisanya=Benefit
+    # Price=Cost, Sisanya=Benefit
     types = ['cost', 'benefit', 'benefit', 'benefit', 'benefit']
     
     # 1. MENENTUKAN NILAI OPTIMAL (X0)
